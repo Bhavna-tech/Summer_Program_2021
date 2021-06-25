@@ -7,7 +7,7 @@
 function f1(){
 var i = document.getElementById("ds").value
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "http://192.168.101.10/cgi-bin/lw.py?x=" + i,true);
+xhr.open("GET", "http://172.31.3.250/cgi-bin/cgipgrm.py?x=" + i,true);
 xhr.send();
 
  xhr.onload = function() {
