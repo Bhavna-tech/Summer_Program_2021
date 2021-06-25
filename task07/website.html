@@ -1,0 +1,100 @@
+<html>
+ <head>
+  <title>Task 07 - Docker WebUI</title>
+ </head>
+
+<script>
+function f1(){
+var i = document.getElementById("ds").value
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.101.10/cgi-bin/lw.py?x=" + i,true);
+xhr.send();
+
+ xhr.onload = function() {
+    var output = xhr.responseText;
+    document.getElementById("d1").innerHTML = output;
+    }
+} 
+</script>
+
+<style>
+ body{ margin: 0; 
+      padding:0;
+    }
+
+ div#block1{ 
+      height:100vh; 
+      background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(https://wallpapercave.com/wp/wp8114669.jpg); 
+      background-size: cover; 
+      background-position:center; 
+      display: flex; 
+      justify-content: center; 
+      padding-left:20px; 
+      font-family: sans-serif; 
+      } 
+
+ h1{ color:#fff; 
+     margin-bottom:40px; 
+     font-size: 45px;  
+     letter-spacing: 2px;
+   }
+
+ div#cmdinput { width:700px; 
+              height:70px; 
+              background-color:#82CAFA; 
+              padding:20px 
+            }
+
+ input#block2{ width:450px; 
+           height:30px; 
+           padding:10px; 
+           border:none; 
+           border-radius:25px; 
+           outline:none;
+         }
+
+ button { height:40px; 
+          width:100px; 
+          background: #ffeb3b; 
+          border:none; 
+          color: #000; 
+          border-radius: 25px; 
+        }
+
+ pre{ width:1400px; 
+      height:400px; 
+      background:rgba(0,0,0,0.5); 
+      padding:20px; 
+      font-size:15px; 
+      color:#fff
+    }
+
+ button:hover{ background:#ffc107; 
+               cursor: pointer; }
+
+ img {width:226px; height:226px } 
+</style>
+ <body>
+  <div id="block1">
+  
+  <form>
+  
+  <div id="box">
+  <img align=right src="https://www.docker.com/sites/default/files/social/docker_facebook_share.png">
+   <h1>Docker - WebUI </h1>
+   
+   
+   <div id="cmdinput">
+   [root@localhost ~]#  
+   <input type="text" id="block2" placeholder="Please enter your docker command..">
+   <button onclick="f1()" class="run-cmd" type="button">OK</button>
+   <br>
+   </div>
+   <pre>
+      <div id="d1">The output is .....</div>
+   </pre>
+   </div>
+  </form>
+  </div>
+ </body>
+</html>
