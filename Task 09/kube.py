@@ -11,6 +11,6 @@ requirement = cgi.FieldStorage()
 
 cmd = requirement.getvalue("command")
 
-output = subprocess.getoutput("sudo " +cmd+ " --kubeconfig /root/task09/admin.conf") 
+output = subprocess.getoutput("sudo " +cmd+ " --kubeconfig /root/kubews/admin.conf") 
 
 print(output)
